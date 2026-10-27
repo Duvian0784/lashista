@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valash_studios | Portafolio de servicios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --fondo:#FBF4F5;
+  --papel:#FFFFFF;
+  --tinta:#2B1720;
+  --suave:#7A6169;
+  --rosa:#C9788F;
+  --rosa-claro:#F3D9E0;
+  --dorado:#B58A5C;
+  --linea:#E9D3D9;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--fondo);color:var(--tinta);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--rosa);outline-offset:3px}
+
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:.02em;text-decoration:none}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.92rem}
+nav a{text-decoration:none;color:var(--suave);transition:color .2s}
+nav a:hover{color:var(--rosa)}
+
+
+.hero{position:relative;padding:30px 0 110px;overflow:hidden;isolation:isolate}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);z-index:-1}
+.hero::before{width:520px;height:520px;right:-120px;top:-120px;background:radial-gradient(circle,#F0B8C7 0%,transparent 70%);opacity:.75}
+.hero::after{width:420px;height:420px;left:-140px;bottom:-140px;background:radial-gradient(circle,#E8CBA6 0%,transparent 70%);opacity:.55}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border:1px solid var(--linea);background:rgba(255,255,255,.7);border-radius:999px;font-size:.88rem;color:var(--suave);margin-bottom:26px}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--rosa);box-shadow:0 0 0 4px var(--rosa-claro)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,6vw,4.8rem);line-height:.96;letter-spacing:-.015em}
+.hero h1 em{color:var(--rosa);font-weight:400;position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.04em;height:.09em;background:var(--dorado);border-radius:99px;opacity:.55;transform-origin:left;animation:sube 1.2s .5s ease both}
+@keyframes sube{from{transform:scaleX(0)}}
+.hero p{max-width:42ch;margin:28px 0 36px;font-size:1.1rem;color:var(--suave)}
+.btn{display:inline-block;background:var(--tinta);color:#fff;padding:15px 34px;border-radius:999px;text-decoration:none;font-weight:400;font-size:.98rem;transition:background .25s,transform .25s,box-shadow .25s}
+.btn:hover{background:var(--rosa);transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(201,120,143,.7)}
+.btn.claro{background:transparent;color:var(--tinta);border:1px solid var(--tinta);margin-left:10px}
+.btn.claro:hover{background:var(--tinta);color:#fff}
+.stats{display:flex;gap:44px;margin-top:52px;padding-top:26px;border-top:1px solid var(--linea)}
+.stats b{display:block;font-family:var(--serif);font-size:2.3rem;font-weight:600;line-height:1}
+.stats span{font-size:.86rem;color:var(--suave)}
+
+.visual{position:relative;max-width:440px;justify-self:center;width:100%}
+.visual::before{content:"";position:absolute;inset:0;border:1.5px solid var(--rosa);border-radius:999px 999px 24px 24px;transform:translate(20px,20px);z-index:-1}
+.visual .foto{aspect-ratio:4/5;border-radius:999px 999px 24px 24px;box-shadow:0 36px 70px -28px rgba(201,120,143,.6)}
+.pestanas{position:absolute;right:-60px;top:-34px;width:230px;pointer-events:none}
+.pestanas path{fill:none;stroke:var(--rosa);stroke-linecap:round;stroke-width:2.2;stroke-dasharray:400;stroke-dashoffset:400;animation:trazo 2.6s ease forwards}
+.pestanas path:nth-child(2n){stroke:var(--dorado)}
+.pestanas path:nth-child(3n){stroke:var(--tinta);stroke-width:1.6}
+@keyframes trazo{to{stroke-dashoffset:0}}
+.sello{position:absolute;left:-52px;bottom:70px;width:124px;height:124px;border-radius:50%;background:var(--papel);box-shadow:0 14px 34px -12px rgba(43,23,32,.3);display:grid;place-items:center}
+.sello svg{position:absolute;inset:0;animation:gira 22s linear infinite}
+.sello text{font:500 10px var(--sans);letter-spacing:2.2px;fill:var(--tinta)}
+.sello span{color:var(--rosa);font-size:1.5rem}
+@keyframes gira{to{transform:rotate(360deg)}}
+.tarjeta{position:absolute;right:-26px;bottom:34px;background:var(--papel);border-radius:18px;padding:14px 20px;box-shadow:0 18px 40px -16px rgba(43,23,32,.35);font-size:.86rem;color:var(--suave);animation:flota 5s ease-in-out infinite}
+.tarjeta b{display:block;font-family:var(--serif);font-size:1.25rem;font-weight:600;color:var(--tinta);line-height:1.15}
+@keyframes flota{50%{transform:translateY(-9px)}}
+@media (prefers-reduced-motion:reduce){.pestanas path{animation:none;stroke-dashoffset:0}.sello svg,.tarjeta,.hero h1 em::after{animation:none}.btn{transition:none}}
+
+
+section{padding:80px 0}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;margin-bottom:12px}
+.intro{color:var(--suave);max-width:52ch;margin-bottom:46px}
+
+
+.servicios{background:var(--papel);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.grupo{display:grid;grid-template-columns:200px 1fr;gap:20px 50px;padding:34px 0;border-top:1px solid var(--linea)}
+.grupo:first-of-type{border-top:0}
+.grupo h3{font-family:var(--serif);font-style:italic;font-weight:500;font-size:1.65rem;color:var(--rosa);line-height:1.2}
+.item{display:flex;align-items:baseline;gap:10px;padding:10px 0}
+.item .nombre{font-weight:500;font-size:1.05rem}
+.item .punteado{flex:1;border-bottom:1px dotted var(--linea);transform:translateY(-4px)}
+.item .precio{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+.detalle{font-size:.9rem;color:var(--suave);margin-top:-6px;padding-bottom:6px;max-width:52ch}
+
+
+.foto{display:block;position:relative;overflow:hidden;background:var(--rosa-claro);cursor:pointer;border:1.5px dashed var(--rosa)}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.foto img[hidden]{display:none}
+.foto .vacio{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--rosa);font-size:.9rem;text-align:center;padding:12px}
+.foto .vacio b{font-family:var(--serif);font-size:2rem;font-weight:500;line-height:1}
+.foto.tiene{border-color:transparent}
+.foto.tiene .vacio{display:none}
+.foto:hover .vacio{color:var(--tinta)}
+.arco{border-radius:999px 999px 18px 18px}
+
+
+.rejilla{display:grid;grid-template-columns:repeat(4,1fr);gap:30px 24px}
+.serv .foto{aspect-ratio:3/4;margin-bottom:18px}
+.serv h3{font-family:var(--serif);font-size:1.6rem;font-weight:500;line-height:1.15;margin-bottom:6px}
+.serv p{font-size:.92rem;color:var(--suave);margin-bottom:12px}
+.serv .precio{font-family:var(--serif);font-size:1.6rem;font-weight:600;color:var(--rosa)}
+
+.bloque{margin-top:64px}
+.bloque:first-of-type{margin-top:0}
+.bloque>h3{font-family:var(--serif);font-style:italic;font-weight:500;font-size:2rem;color:var(--tinta);margin-bottom:26px;display:flex;align-items:center;gap:18px}
+.bloque>h3::after{content:"";flex:1;height:1px;background:var(--linea)}
+.serv.ancha{display:grid;grid-template-columns:240px 1fr;gap:34px;align-items:center;max-width:640px}
+.serv.ancha .foto{margin-bottom:0}
+@media (min-width:761px){.rejilla.tres{grid-template-columns:repeat(3,1fr);max-width:760px}}
+@media (max-width:560px){.serv.ancha{grid-template-columns:1fr;gap:18px}}
+
+
+.cabello{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pack{background:linear-gradient(180deg,#FFFFFF 0%,var(--rosa-claro) 100%);border:1px solid var(--linea);border-radius:30px;padding:26px 20px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 20px 40px -26px rgba(201,120,143,.5)}
+.pack h4{font-family:var(--serif);font-weight:600;font-size:1.85rem;line-height:1.05;text-align:center;min-height:2.1em;display:flex;align-items:center;justify-content:center}
+.pack .foto{aspect-ratio:4/3;border-radius:20px}
+.desde{display:flex;align-items:baseline;justify-content:center;gap:10px;background:linear-gradient(90deg,#D98BA0,#C9788F);color:#fff;border-radius:999px;padding:10px 20px}
+.desde small{font-family:var(--serif);font-style:italic;font-size:1.15rem}
+.desde b{font-family:var(--serif);font-size:2.1rem;font-weight:600;line-height:1}
+.pack ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pack li{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.75);border:1px solid var(--linea);border-radius:999px;padding:6px 18px 6px 6px;font-size:.92rem;line-height:1.3;min-height:54px}
+.pack li i{flex:none;width:40px;height:40px;border-radius:50%;background:var(--rosa-claro);color:var(--rosa);display:grid;place-items:center;font-style:normal;font-size:1.1rem}
+@media (max-width:900px){.cabello{grid-template-columns:1fr;max-width:460px}}
+
+
+.sobre{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:60px;align-items:center}
+.sobre .foto{aspect-ratio:4/5}
+.sobre h2{margin-bottom:6px}
+.sobre .cargo{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--rosa);margin-bottom:20px}
+.sobre p{color:var(--suave);max-width:50ch;margin-bottom:14px}
+.sobre ul{list-style:none;margin-top:20px;display:flex;flex-wrap:wrap;gap:10px}
+.sobre li{border:1px solid var(--linea);background:var(--papel);border-radius:999px;padding:8px 18px;font-size:.9rem}
+
+
+.combos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.combo{padding:34px 28px;border-radius:26px 26px 26px 6px;background:var(--rosa-claro)}
+.combo:nth-child(2){background:var(--tinta);color:#fff;border-radius:26px 6px 26px 26px}
+.combo:nth-child(2) .cprecio,.combo:nth-child(2) li::before{color:var(--rosa-claro)}
+.combo:nth-child(3){background:var(--papel);border:1px solid var(--linea);border-radius:6px 26px 26px 26px}
+.combo h3{font-family:var(--serif);font-size:1.7rem;font-weight:500;line-height:1.15}
+.cprecio{font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--rosa);margin:8px 0 14px}
+.combo ul{list-style:none;font-size:.95rem}
+.combo li{padding-left:22px;position:relative;margin-bottom:6px}
+.combo li::before{content:"✦";position:absolute;left:0;color:var(--rosa);font-size:.75rem;top:4px}
+
+
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.dos h3{font-family:var(--serif);font-size:1.75rem;font-weight:500;margin-bottom:14px}
+.dos ul{list-style:none}
+.dos li{padding:10px 0 10px 26px;border-bottom:1px solid var(--linea);position:relative;font-size:.97rem}
+.dos li::before{content:"";position:absolute;left:2px;top:19px;width:10px;height:1px;background:var(--rosa);box-shadow:0 4px 0 var(--rosa)}
+.seccion-cita{grid-column: 1 / -1; justify-self: center;  margin-top: 40px; text-align: left;}
+@media (max-width:768px){.seccion-cita{ justify-self: stretch; max-width: 100%;}}
+
+
+.contacto{background:var(--tinta);color:#fff;text-align:center;border-radius:40px 40px 0 0}
+.contacto h2{max-width:16ch;margin:0 auto 16px}
+.contacto p{color:#D9C3CA;max-width:44ch;margin:0 auto 34px}
+.contacto .btn{background:var(--rosa)}
+.contacto .btn:hover{background:#fff;color:var(--tinta)}
+.contacto .btn.claro{color:#fff;border-color:#fff}
+.contacto .btn.claro:hover{background:#fff;color:var(--tinta)}
+.datos a{text-decoration:none}
+.datos a:hover{color:#fff}
+.datos{display:flex;flex-wrap:wrap;gap:12px 34px;justify-content:center;margin-top:44px;font-size:.95rem;color:#D9C3CA}
+footer{background:var(--tinta);color:#9c8790;text-align:center;font-size:.82rem;padding:0 0 30px}
+
+
+#editar{position:fixed;right:18px;bottom:18px;z-index:10;background:var(--papel);border:1px solid var(--tinta);color:var(--tinta);font:400 .88rem var(--sans);padding:11px 20px;border-radius:999px;cursor:pointer;box-shadow:0 6px 20px rgba(43,23,32,.15)}
+#editar.on{background:var(--rosa);border-color:var(--rosa);color:#fff}
+body.editando [contenteditable]{outline:1px dashed var(--rosa);outline-offset:3px;cursor:text}
+@media print{#editar{display:none}}
+@media (max-width:420px){.rejilla{grid-template-columns:1fr}}
+
+@media (max-width:760px){
+  nav ul{display:none}
+  .dos,.sobre{grid-template-columns:1fr;gap:40px}
+  .rejilla{grid-template-columns:repeat(2,1fr);gap:28px 16px}
+  .serv h3{font-size:1.3rem}
+  .hero-grid{grid-template-columns:1fr;gap:70px}
+  .visual{max-width:340px;margin-bottom:10px}
+  .pestanas{width:160px;right:-24px}
+  .sello{left:-20px;width:100px;height:100px}
+  .tarjeta{right:-12px}
+  .stats{gap:24px}
+  .stats b{font-size:1.8rem}
+  .btn.claro{margin:12px 0 0}
+  section{padding:60px 0}
+}
+body{caret-color:transparent}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#inicio" data-edit>Valash_studios</a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#combos">Combos</a></li>
+      <li><a href="#cuidados">Cuidados</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<header class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="pill"><i></i><span data-edit>Estudio de pestañas, cejas y Cabello</span></div>
+      <h1 data-edit>Un momento para ti<em> Una belleza</em> que te hace brillar</h1>
+      <p data-edit>Desde un cabello deslumbrante hasta una mirada imponente y una piel perfecta. Disfruta de tratamientos expertos en peluquería, cejas, pestañas y depilación pensados exclusivamente para ti.</p>
+      <a class="btn" href="#contacto">Reservar mi cita</a>
+      <a class="btn claro" href="#servicios">Ver servicios</a>
+      <div class="stats">
+        <div><b data-edit>100%</b><span data-edit>Clientas felices</span></div>
+        <div><b data-edit>+2</b><span data-edit>Años de experiencia</span></div>
+        <div><b data-edit>100%</b><span data-edit>Personalizado</span></div>
+      </div>
+    </div>
+    <div class="visual">
+      <svg class="pestanas" viewBox="0 0 560 420" aria-hidden="true">
+        <path d="M20 330 C 90 150, 220 60, 360 40"/>
+        <path d="M40 350 C 130 190, 250 110, 420 90"/>
+        <path d="M70 372 C 170 240, 290 170, 470 150"/>
+        <path d="M110 392 C 210 290, 330 230, 510 215"/>
+        <path d="M160 405 C 260 330, 380 290, 540 285"/>
+        <path d="M10 300 C 60 140, 160 40, 290 10"/>
+      </svg>
+      <label class="foto" title="Clic para subir la foto de portada"><img alt="Portada Valash_studios" src="IMAGENES/Estudio Valash_ Mirada y belleza.png" ></label>
+      <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 120 120"><defs><path id="circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs><text><textPath href="#circ">VALASH STUDIOS • LASHES,BROWS&amp;HAIR • </textPath></text></svg>
+        <span>✦</span>
+      </div>
+      <div class="tarjeta"><b data-edit>Cupos limitados</b><span data-edit>Agenda tu cita hoy</span></div>
+    </div>
+  </div>
+</header>
+
+
+<section class="servicios" id="servicios">
+  <div class="wrap">
+    <h2 data-edit>Servicios</h2>
+    <p class="intro" data-edit>Cada servicio se personaliza según tu rostro y el efecto que quieras lograr. Los precios pueden variar según la valoración.</p>
+  
+    <div class="bloque">
+      <h3 data-edit>Pestañas</h3>
+      <div class="rejilla">
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Efecto cat eyes" src="IMAGENES/3.jpeg" ></label>
+        <h3 data-edit>Efecto cat eyes</h3>
+        <p data-edit>Mayor longitud en el extremo externo para alargar y elevar la mirada, como un delineado suave.</p>
+        <span class="precio" data-edit>$70.000</span>
+      </article>
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Técnica clásica" src="IMAGENES/6.jpeg" ></label>
+        <h3 data-edit>Efecto clásico</h3>
+        <p data-edit>Una extensión por cada pestaña natural. Acabado limpio, ligero y muy natural.</p>
+        <span class="precio" data-edit>$60.000</span>
+      </article>
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Efecto muñeca" src="IMAGENES/5.jpeg" ></label>
+        <h3 data-edit>Efecto muñeca</h3>
+        <p data-edit>Más longitud en el centro del ojo para una mirada abierta, redonda y luminosa.</p>
+        <span class="precio" data-edit>$70.000</span>
+      </article>
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Efecto ardilla" src="IMAGENES/7.jpeg"></label>
+        <h3 data-edit>Efecto ardilla</h3>
+        <p data-edit>Longitud graduada y puntas texturizadas para una mirada dulce y ligeramente alargada.</p>
+        <span class="precio" data-edit>$70.000</span>
+      </article>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3 data-edit>Cejas</h3>
+      <div class="rejilla tres">
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Laminado de cejas" src="IMAGENES/WhatsApp Image 2026-091-25 at 4.21.56 PM.jpeg"></label>
+        <div>
+          <h3 data-edit>Laminado de cejas</h3>
+          <p data-edit>Alisa y fija el vello para lograr cejas definidas, voluminosas y con efecto peinado.</p>
+          <span class="precio" data-edit>$40.000</span>
+        </div>
+      </article>
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Diseño de cejas" src="IMAGENES/diseño cejas.jpeg"></label>
+        <div>
+          <h3 data-edit>Diseño + depilación de cejas</h3>
+          <p data-edit>Diseño personalizado según la forma de tu rostro, con depilación y perfilado limpio.</p>
+          <span class="precio" data-edit>$20.000</span>
+        </div>
+      </article>
+      <article class="serv">
+        <label class="foto arco" title=""><img alt="Pigmentación de cejas" src="IMAGENES/WhatsApp Image 2026-09-25 at 4.21.56 PM.jpeg"></label>
+        <div>
+          <h3 data-edit>Pigmentación de cejas</h3>
+          <p data-edit>Color uniforme que rellena y define la ceja para un acabado natural y duradero.</p>
+          <span class="precio" data-edit>$25.000</span>
+        </div>
+      </article>
+      </div>
+    </div>
+
+     <div class="bloque">
+      <h3 data-edit>Cabello</h3>
+      <div class="cabello">
+      <article class="pack">
+        <h4 data-edit>Tratamiento células madre</h4>
+        <label class="foto" title=""><img alt="Tratamiento células madre - producto" src="IMAGENES/WhatsApp Image 2026-10-02 at 7.46.46 AM.jpeg" ></label>
+        <div class="desde"><small data-edit>Desde</small><b data-edit>$60.000</b></div>
+        <ul>
+          <li><i>◔</i><span data-edit>Nutrición profunda del cabello.</span></li>
+          <li><i>❦</i><span data-edit>Hidrata la fibra capilar.</span></li>
+          <li><i>✦</i><span data-edit>Aporta brillo y suavidad.</span></li>
+          <li><i>❀</i><span data-edit>Ideal para cabello reseco o maltratado.</span></li>
+        </ul>
+        <label class="foto" title="Clic para subir una foto"><img alt="Tratamiento células madre - resultado" src="IMAGENES/WhatsApp Image 2026-10-02 at 9.42.21 AM.jpeg" ></label>
+      </article>
+      <article class="pack">
+        <h4 data-edit>Alisado WELLA</h4>
+        <label class="foto" title="Clic para subir una foto"><img alt="Alisado - producto" src="IMAGENES/WhatsApp Image 2026-10-02 at 7.48.12 AM.jpeg" ></label>
+        <div class="desde"><small data-edit>Desde</small><b data-edit>$250.000</b></div>
+        <ul>
+          <li><i>≈</i><span data-edit>Elimina el frizz.</span></li>
+          <li><i>❦</i><span data-edit>Alisado suave y progresivo.</span></li>
+          <li><i>✦</i><span data-edit>Cabello más manejable, sedoso y brillante.</span></li>
+          <li><i>◷</i><span data-edit>Resultado elegante y duradero.</span></li>
+        </ul>
+        <label class="foto" title="Clic para subir una foto"><img alt="Alisado - resultado" src="IMAGENES/WhatsApp Image 2026-10-02 at 9.43.41 AM.jpeg" ></label>
+      </article>
+      <article class="pack">
+        <h4 data-edit>Keratina Alfaparf</h4>
+        <label class="foto" title="Clic para subir una foto"><img alt="Keratina Alfaparf - producto" src="IMAGENES/WhatsApp Image 2026-10-02 at 7.47.29 AM.jpeg" ></label>
+        <div class="desde"><small data-edit>Desde</small><b data-edit>$150.000</b></div>
+        <ul>
+          <li><i>☁</i><span data-edit>Reduce el frizz.</span></li>
+          <li><i>✦</i><span data-edit>Cabello más liso, suave y brillante.</span></li>
+          <li><i>♡</i><span data-edit>Ideal para cabellos maltratados y con químicas.</span></li>
+          <li><i>◇</i><span data-edit>Brillo y reparación por más tiempo.</span></li>
+        </ul>
+        <label class="foto" title="Clic para subir una foto"><img alt="Keratina Alfaparf - resultado" src="IMAGENES/WhatsApp Image 2026-10-02 at 9.44.41 AM.jpeg" ></label>
+      </article>
+      </div>
+    </div>
+
+    <div class="bloque">
+      <h3 data-edit>Depilación</h3>
+      <div class="rejilla">
+      <article class="serv ancha">
+        <label class="foto arco" title=""><img alt="Depilación de piernas y bozo" src="IMAGENES/Depilación con cera en spa.png" ></label>
+        <div>
+          <h3 data-edit>Depilación de piernas, axilas y bozo</h3>
+          <p data-edit>Depilación suave y prolija para piernas y bozo, con piel lisa por más tiempo.</p>
+          <span class="precio" data-edit>$50.000</span>
+        </div>
+      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="sobre-mi">
+  <div class="wrap sobre">
+    <label class="foto arco" title=""><img alt="Foto de la dueña del emprendimiento" src="IMAGENES/perfil trabajo.jpeg" style="position: absolute; inset: 0; width: 100%; height: 120%; object-fit: cover;"></label>
+    <div>
+      <h2 data-edit>Hola, soy Valentina Lopez</h2>
+      <div class="cargo" data-edit>Lashista y Hair Therapist</div>
+      <p data-edit>Crear este estudio nació de un propósito claro: ofrecer un refugio donde el cuidado personal y la belleza integral van de la mano. Me apasiona el arte de realzar la esencia natural de cada mujer, combinando técnica y dedicación en cada área, desde tu cabello hasta tu mirada y tu piel. Cuando te sientas en nuestro espacio, no solo estás recibiendo un servicio experto; estás regalándote una pausa para consentirte, relajarte y salir sintiéndote radiante, segura y completamente tú.</p>
+      <p data-edit>Trabajo con productos de calidad y un diseño personalizado para cada mirada.</p>
+      <ul>
+        <li data-edit>Certificada en extensiones de pestañas clasicas y fibras tecnologicas</li>
+        <li data-edit>Certificada en tratamientos capilares, keratina y alisado profesional</li>
+        <li data-edit>Certificada en curso intensivo de lash Day</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section id="cuidados" style="padding-top:20px">
+  <div class="wrap dos">
+    <div>
+      <h3 data-edit>Cuidados post servicio de pestañas</h3>
+      <ul>
+        <li data-edit>Evita mojarlas durante las primeras 24 horas.</li>
+        <li data-edit>Retoque de extensiones 15-18 días posteriores a la aplicación.</li>
+        <li data-edit>Cepíllalas cada mañana con un cepillo limpio.</li>
+        <li data-edit>Usa productos sin aceite cerca de los ojos.</li>
+        <li data-edit>No las frotes, ni las arranques.</li>
+      </ul>
+    </div>
+     <div>
+      <h3 data-edit>Cuidados post procesos capilares</h3>
+      <ul>
+        <li data-edit>No mojes el cabello en los primeros 5 dias.</li>
+        <li data-edit>Lavar con una linea capilar sin sal</li>
+        <li data-edit>Despues del lavado usar de preferencia el secador</li>
+      </ul>
+    </div>
+    <div class="seccion-cita">
+      <h3 data-edit style="text-align:start;">Antes de tu cita</h3>
+      <ul style="display: inline-block; text-align: left;">
+        <li data-edit>Llega sin maquillaje en los ojos o cejas.</li>
+        <li data-edit>Reserva con un anticipo para confirmar tu horario.</li>
+        <li data-edit>Avisa con 24 horas de anticipación si necesitas reprogramar.</li>
+        <li data-edit>Llega puntual para aprovechar todo tu tiempo.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <h2 data-edit>Reserva tu cita hoy</h2>
+    <p data-edit>Escríbeme y te ayudo a elegir el diseño ideal para ti. Los cupos son limitados.</p>
+    
+    <a class="btn" href="https://wa.me/573214896746" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <a class="btn claro ig" href="https://www.instagram.com/valash_studios?stkn=MTN3M2NjcmVnajh2bw==" target="_blank" rel="noopener">Ver Instagram</a>
+    <div class="datos">
+      <a href="https://www.instagram.com/valash_studios?stkn=MTN3M2NjcmVnajh2bw==" target="_blank" rel="noopener">@valash_studios</a>
+      <a href="https://wa.me/573219410820" target="_blank" rel="noopener">+57 321 489 6746</a>
+      <span data-edit>Cucuta, Colombia</span>
+      <span data-edit>Horario por cita</span>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap" data-edit>© 2026 Valash_studios. Todos los derechos reservados.</div></footer>
+</body>
+</html>
